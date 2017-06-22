@@ -1,308 +1,205 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang=zh>
 <head>
-  <meta charset="utf-8">
-  
-  <title>Lance Notes | coder for game</title>
-
-  
-  <meta name="author" content="Lance">
-  
-
-  
-
-  
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  
-
-  <meta property="og:site_name" content="Lance Notes"/>
-
-  
-  <meta property="og:image" content="/favicon.ico"/>
-  
-
-  <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Lance Notes" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Lance Notes">
+<meta property="og:url" content="http://blog.chengliangsite.cn/index.html">
+<meta property="og:site_name" content="Lance Notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lance Notes">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Lance Notes</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
 </head>
 
-
 <body>
-<div class="blog">
-  <div class="content">
-
-    <header>
-  <div class="site-branding">
-    <h1 class="site-title">
-      <a href="/">Lance Notes</a>
-    </h1>
-    <p class="site-description">coder for game</p>
-  </div>
-  <nav class="site-navigation">
+    
+    <div class="content index width mx-auto px2 my4">
+        
+          <header id="header">
+  <a href="/">
+  
+    
+      <div id="logo" style="background-image: url(/images/logo.png);"></div>
+    
+  
+    <div id="title">
+      <h1>Lance Notes</h1>
+    </div>
+  </a>
+  <div id="nav">
     <ul>
-      
-        <li><a href="/">主页</a></li>
-      
-        <li><a href="/archives">归档</a></li>
-      
-        <li><a href="/categories">分类</a></li>
-      
-        <li><a href="/tags">标签</a></li>
-      
-        <li><a href="/about">关于</a></li>
+      <li class="icon">
+        <a href="#"><i class="fa fa-bars fa-2x"></i></a>
+      </li>
+       
+        <li><a href="/">Home</a></li>
+       
+        <li><a href="/about/">About</a></li>
+       
+        <li><a href="/archives/">Writing</a></li>
+       
+        <li><a href="https://github.com/TomasCheng">Projects</a></li>
       
     </ul>
-  </nav>
+  </div>
 </header>
 
-    <main class="site-main posts-loop">
-    
-  <article>
-
+        
+        <section id="about">
   
+  <p style="display: inline">
     
-    <h3 class="article-title"><a href="/2017/06/22/u3d的spritepacker和assetbundle/"><span>u3d的spritepacker和assetbundle</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/06/22/u3d的spritepacker和assetbundle/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-06-22T13:48:04.000Z">
-          2017-06-22
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>这份文档是在一家公司二面的时候面试官让我写的发到他邮箱。<br>这两样东西之前学u3d的时候没学到，正好学一下。</p>
-<h3 id="SpritePacker"><a href="#SpritePacker" class="headerlink" title="SpritePacker"></a>SpritePacker</h3><ul>
-<li>UGUI的Atlas和NGUI的Atlas的区别:<br>NGUI是必须先打出图集然后才能开始做界面;<br>UGUI做界面的时候只用小图，而在最终打包的时候unity才会把小图合并在一张大的图集里面，这是自动完成的。</li>
-<li><p>开启它。Editor-&gt;Project Settings 下面有sprite packer的模式，不同的设置有不同功能，见名知意。</p>
-</li>
-<li><p>注意：图片不能放在Resources文件夹下面，Resources文件夹下的资源将不会被打入图集</p>
-</li>
-<li>在Windows-&gt;Sprite Packer 里，点击packer预览到图集信息。</li>
-<li>实验中可以看到：<br>设置成Disabled后，放置两个Image到场景中，drawcall为2<br>设置成Always Enabled后，放置两个Image到场景中，drawcall只有1<br>（将同一图集的所有图片的packing tag设置成一个名字，可以让我们在开发的时候看到有几个drawcall）</li>
-<li>这个打包好的图集保存在和Assets文件夹同级的目录，Libary/AtlasCache里面</li>
-<li>怎么在运行时动态创建精灵：<br>先把小图打成图集，然后把所有小图关联在prefab上，拷贝在Resources文件夹下，这样运行时就能用Resources.load了（不直接把小图放到Resources文件夹下，是因为，这样的话资源就变成双份的了，增大包的体积呀！）</li>
-<li>用代码实现用/Atlas目录下的图片制造成同名的perfab放到/Resources/Sprite下面</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">[MenuItem (&quot;MyMenu/AtlasMaker&quot;)]</div><div class="line">static private void MakeAtlas()</div><div class="line">&#123;</div><div class="line">	string spriteDir = Application.dataPath +&quot;/Resources/Sprite&quot;;</div><div class="line">	</div><div class="line">	if(!Directory.Exists(spriteDir))&#123;</div><div class="line">		Directory.CreateDirectory(spriteDir);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	DirectoryInfo rootDirInfo = new DirectoryInfo (Application.dataPath +&quot;/Atlas&quot;);</div><div class="line">	foreach (DirectoryInfo dirInfo in rootDirInfo.GetDirectories()) &#123;</div><div class="line">		foreach (FileInfo pngFile in dirInfo.GetFiles(&quot;*.png&quot;,SearchOption.AllDirectories)) &#123;</div><div class="line">			string allPath = pngFile.FullName;</div><div class="line">			string assetPath = allPath.Substring(allPath.IndexOf(&quot;Assets&quot;));</div><div class="line">			Sprite sprite = AssetDatabase.LoadAssetAtPath&lt;Sprite&gt;(assetPath);</div><div class="line">			GameObject go = new GameObject(sprite.name);</div><div class="line">			go.AddComponent&lt;SpriteRenderer&gt;().sprite = sprite;</div><div class="line">			 allPath = spriteDir+&quot;/&quot;+sprite.name+&quot;.prefab&quot;;</div><div class="line">			string prefabPath = allPath.Substring(allPath.IndexOf(&quot;Assets&quot;));</div><div class="line">			PrefabUtility.CreatePrefab(prefabPath,go);</div><div class="line">			GameObject.DestroyImmediate(go);</div><div class="line">		&#125;</div><div class="line">	&#125;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>运行时的加载指定名称的资源的代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">public class UIMain : MonoBehaviour &#123;</div><div class="line"> </div><div class="line">	void Start () </div><div class="line">	&#123;</div><div class="line">		CreatImage(loadSprite(&quot;image0&quot;));</div><div class="line">		CreatImage(loadSprite(&quot;image1&quot;));</div><div class="line">	&#125;</div><div class="line"> </div><div class="line">	private GameObject CreatImage(Sprite sprite )&#123;</div><div class="line">		GameObject go = new GameObject(sprite.name);</div><div class="line">		go.layer = LayerMask.NameToLayer(&quot;UI&quot;);</div><div class="line">		go.transform.parent = transform;</div><div class="line">		go.transform.localScale= Vector3.one;</div><div class="line">		Image image = go.AddComponent&lt;Image&gt;();</div><div class="line">		image.sprite = sprite;</div><div class="line">		image.SetNativeSize();</div><div class="line">		return go;</div><div class="line">	&#125;</div><div class="line"> </div><div class="line">	private Sprite loadSprite(string spriteName)&#123;</div><div class="line">		return Resources.Load&lt;GameObject&gt;(&quot;Sprite/&quot; + spriteName).GetComponent&lt;SpriteRenderer&gt;().sprite;</div><div class="line">	&#125;</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>同AssetBundle结合使用<br>先将图片打成图集放到/StreamingAssets下</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">[MenuItem (&quot;MyMenu/Build Assetbundle&quot;)]</div><div class="line">	static private void BuildAssetBundle()</div><div class="line">	&#123;</div><div class="line">		string dir = Application.dataPath +&quot;/StreamingAssets&quot;;</div><div class="line"> </div><div class="line">		if(!Directory.Exists(dir))&#123;</div><div class="line">			Directory.CreateDirectory(dir);</div><div class="line">		&#125;</div><div class="line">		DirectoryInfo rootDirInfo = new DirectoryInfo (Application.dataPath +&quot;/Atlas&quot;);</div><div class="line">		foreach (DirectoryInfo dirInfo in rootDirInfo.GetDirectories()) &#123;</div><div class="line">			List&lt;Sprite&gt; assets = new List&lt;Sprite&gt;();</div><div class="line">			string path = dir +&quot;/&quot;+dirInfo.Name+&quot;.assetbundle&quot;;</div><div class="line">			foreach (FileInfo pngFile in dirInfo.GetFiles(&quot;*.png&quot;,SearchOption.AllDirectories)) </div><div class="line">			&#123;</div><div class="line">				string allPath = pngFile.FullName;</div><div class="line">				string assetPath = allPath.Substring(allPath.IndexOf(&quot;Assets&quot;));</div><div class="line">				assets.Add(AssetDatabase.LoadAssetAtPath&lt;Sprite&gt;(assetPath));</div><div class="line">			&#125;</div><div class="line">			if(BuildPipeline.BuildAssetBundle(null, assets.ToArray(), path,BuildAssetBundleOptions.UncompressedAssetBundle| BuildAssetBundleOptions.CollectDependencies, GetBuildTarget()))&#123;</div><div class="line">			&#125;</div><div class="line">		&#125;	</div><div class="line">	&#125;</div><div class="line">		static private BuildTarget GetBuildTarget()</div><div class="line">		&#123;</div><div class="line">			BuildTarget target = BuildTarget.WebPlayer;</div><div class="line">#if UNITY_STANDALONE</div><div class="line">			target = BuildTarget.StandaloneWindows;</div><div class="line">#elif UNITY_IPHONE</div><div class="line">			target = BuildTarget.iPhone;</div><div class="line">#elif UNITY_ANDROID</div><div class="line">			target = BuildTarget.Android;</div><div class="line">#endif</div><div class="line">			return target;</div><div class="line">		&#125;</div></pre></td></tr></table></figure>
-<p>运行时从assetbundle中拿到我们想要的sprite</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">public class UIMain : MonoBehaviour &#123;</div><div class="line"> </div><div class="line">	AssetBundle assetbundle = null;</div><div class="line">	void Start () </div><div class="line">	&#123;</div><div class="line">		CreatImage(loadSprite(&quot;image0&quot;));</div><div class="line">		CreatImage(loadSprite(&quot;image1&quot;));</div><div class="line">	&#125;</div><div class="line"> </div><div class="line">	private GameObject CreatImage(Sprite sprite )&#123;</div><div class="line">		GameObject go = new GameObject(sprite.name);</div><div class="line">		go.layer = LayerMask.NameToLayer(&quot;UI&quot;);</div><div class="line">		go.transform.parent = transform;</div><div class="line">		go.transform.localScale= Vector3.one;</div><div class="line">		Image image = go.AddComponent&lt;Image&gt;();</div><div class="line">		image.sprite = sprite;</div><div class="line">		image.SetNativeSize();</div><div class="line">		return go;</div><div class="line">	&#125;</div><div class="line"> </div><div class="line">	private Sprite loadSprite(string spriteName)&#123;</div><div class="line">#if USE_ASSETBUNDLE</div><div class="line">		if(assetbundle == null)</div><div class="line">			assetbundle = AssetBundle.CreateFromFile(Application.streamingAssetsPath +&quot;/Main.assetbundle&quot;);</div><div class="line">				return assetbundle.Load(spriteName) as Sprite;</div><div class="line">#else</div><div class="line">		return Resources.Load&lt;GameObject&gt;(&quot;Sprite/&quot; + spriteName).GetComponent&lt;SpriteRenderer&gt;().sprite;</div><div class="line">#endif	</div><div class="line">	&#125;</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="AssetBundle"><a href="#AssetBundle" class="headerlink" title="AssetBundle"></a>AssetBundle</h3><ul>
-<li>把多个游戏对象或者资源二进制文件封装到Assetbundle中</li>
-<li>封装的文件类型：  <ol>
-<li>预设：<ul>
-<li>Prefab可以将游戏对象身上带的游戏游戏组件、游戏脚本、材质都封装在一起。当从服务器上将Assetbundle下载以后直接Instantiate就可以放入游戏中（这样的话，就免去了从服务器上下载各种资源以后，再组装的步骤）；</li>
-</ul>
-</li>
-<li>二进制文件：<ul>
-<li>将二进制文件直接封装在里面，比如图片、声音、文本信息等等。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>注意的地方：移动平台上不能更新脚本，也就是说我们下载下来的perfab上的脚本是不会执行的，但是有一点很好，当本地有这个脚本，unity就会自动地把这个脚本绑定到预设上。</li>
-<li>创建AssertBundle<br>相同的模型尽量打包在一起，他们会公用一套资源文件。不相同的模型尽量分开打包。相同模型具有不同的脚本、组件的话把他们放在不同的Prefab中，最后把这些Prefab一起打包在一个Assetbundle中。  </li>
-</ul>
-<ol>
-<li>分开打包：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">[MenuItem(&quot;Custom Editor/Create AssetBunldes Main&quot;)]</div><div class="line">	static void CreateAssetBunldesMain ()</div><div class="line">	&#123;</div><div class="line">        //获取在Project视图中选择的所有游戏对象</div><div class="line">		Object[] SelectedAsset = Selection.GetFiltered (typeof(Object), SelectionMode.DeepAssets);</div><div class="line"> </div><div class="line">        //遍历所有的游戏对象</div><div class="line">		foreach (Object obj in SelectedAsset) </div><div class="line">		&#123;</div><div class="line">			string sourcePath = AssetDatabase.GetAssetPath (obj);</div><div class="line">			//本地测试：建议最后将Assetbundle放在StreamingAssets文件夹下，如果没有就创建一个，因为移动平台下只能读取这个路径</div><div class="line">			//StreamingAssets是只读路径，不能写入</div><div class="line">			//服务器下载：就不需要放在这里，服务器上客户端用www类进行下载。</div><div class="line">			string targetPath = Application.dataPath + &quot;/StreamingAssets/&quot; + obj.name + &quot;.assetbundle&quot;;</div><div class="line">			if (BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.CollectDependencies)) &#123;</div><div class="line">  				Debug.Log(obj.name +&quot;资源打包成功&quot;);</div><div class="line">			&#125; </div><div class="line">			else </div><div class="line">			&#123;</div><div class="line"> 				Debug.Log(obj.name +&quot;资源打包失败&quot;);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		//刷新编辑器</div><div class="line">		AssetDatabase.Refresh ();	</div><div class="line"> </div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>最核心的方法其实就它：<br>BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.CollectDependencies)<br>参数1：它只能放一个对象，因为我们这里是分别打包，所以通过循环将每个对象分别放在了这里。<br>参数2：可以放入一个数组对象。<br>默认情况下打的包只能在电脑上用，如果要在手机上用就要添加一个参数。<br>Android上：<br>BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.CollectDependencies,BuildTarget.Android)<br>IOS上:<br>BuildPipeline.BuildAssetBundle (obj, null, targetPath, BuildAssetBundleOptions.CollectDependencies,BuildTarget.iPhone)</p>
-<ol>
-<li>将所有对象打包在一个Assetbundle中。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">[MenuItem(&quot;Custom Editor/Create AssetBunldes ALL&quot;)]</div><div class="line">static void CreateAssetBunldesALL ()</div><div class="line">&#123;</div><div class="line"></div><div class="line">	Caching.CleanCache ();</div><div class="line"></div><div class="line">	string Path = Application.dataPath + &quot;/StreamingAssets/ALL.assetbundle&quot;;</div><div class="line"></div><div class="line">	Object[] SelectedAsset = Selection.GetFiltered (typeof(Object), SelectionMode.DeepAssets);</div><div class="line"></div><div class="line">	foreach (Object obj in SelectedAsset) </div><div class="line">	&#123;</div><div class="line">		Debug.Log (&quot;Create AssetBunldes name :&quot; + obj);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	//这里注意第二个参数就行</div><div class="line">	if (BuildPipeline.BuildAssetBundle (null, SelectedAsset, Path, BuildAssetBundleOptions.CollectDependencies)) &#123;</div><div class="line">		AssetDatabase.Refresh ();</div><div class="line">	&#125; else &#123;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>读取AssetBundle</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//读取全部资源</div><div class="line">   //参数就是xxxx.assertbundle</div><div class="line">   //eg:&quot;file://&quot; + Application.dataPath + &quot;/StreamingAssets/&quot;+&quot;Prefab0.assetbundle&quot;</div><div class="line">private IEnumerator LoadALLGameObject(string path)</div><div class="line">&#123;</div><div class="line">	 WWW bundle = new WWW(path);</div><div class="line"></div><div class="line">	 yield return bundle;</div><div class="line"></div><div class="line">	 //通过Prefab的名称把他们都读取出来</div><div class="line">	 Object  obj0 =  bundle.assetBundle.Load(&quot;Prefab0&quot;);</div><div class="line">	 Object  obj1 =  bundle.assetBundle.Load(&quot;Prefab1&quot;);</div><div class="line"></div><div class="line">	 //加载到游戏中	</div><div class="line">	 yield return Instantiate(obj0);</div><div class="line">	 yield return Instantiate(obj1);</div><div class="line">	 bundle.assetBundle.Unload(false);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>流程（大致上就是 将本地资源打包，然后放到资源服务器上供游戏客户端下载或更新）<br>服务器上持有两种东西，一个是游戏资源AssetBundle，一个是资源的维护列表（包含了每个资源的完整路径名和对应的版本号）<br>所以，客户端的资源打包管理器完成以下工作：<br>(1)将资源打包成assetbundle，并放到指定目录下（要注意的是，各个平台使用的资源包时各自独立的，所以打包时还要分平台来做）<br>(2)为每个assetbund生成最新MD5码，用于检查资源是否有修改<br>(3)比较新旧MD5码列表，产生资源变更列表，对于每个变更的资源，将其版本号+1<br>(4)将变更列表文件也打包成assetbundle  </li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/游戏相关/">游戏相关</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/u3d/">u3d</a><a href="/tags/spritepacker/">spritepacker</a><a href="/tags/assetbundle/">assetbundle</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/06/21/First-Hexo-Blog/"><span>First Hexo Blog</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/06/21/First-Hexo-Blog/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-06-21T15:32:53.000Z">
-          2017-06-21
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="This-is-the-FIrst-Blog-in-Hexo-by-Lance"><a href="#This-is-the-FIrst-Blog-in-Hexo-by-Lance" class="headerlink" title="This is the FIrst Blog in Hexo by Lance"></a>This is the FIrst Blog in Hexo by Lance</h1><ul>
-<li>welcome my new blog coming</li>
-<li>haha</li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/小白/">小白</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/06/21/hello-world/"><span>Hello World</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/06/21/hello-world/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-06-21T15:18:44.708Z">
-          2017-06-21
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-
-<nav class="pagination">
-  
-  
-</nav>
-    </main>
-
-    <footer class="site-footer">
-  <p class="site-info">
-    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
-    </br>
-    
-    &copy; 2017 Lance
+      Find me on
+      <ul id="sociallinks">
+        
+          <li><a class="icon" target="_blank" href="https://github.com/TomasCheng" title="github"><i class="fa fa-github"></i></a></li>
+        
+          <li><a class="icon" target="_blank" href="https://twitter.com/Autor_man/" title="twitter"><i class="fa fa-twitter"></i></a></li>
+        
+          <li><a class="icon" target="_blank" href="https://www.facebook.com/liang.cheng.1650" title="facebook"><i class="fa fa-facebook"></i></a></li>
+        
+          <li><a class="icon" target="_blank" href="https://www.linkedin.com/in/%E4%BA%AE-%E7%A8%8B-b3a69b145/" title="linkedin"><i class="fa fa-linkedin"></i></a></li>
+        
+      </ul>.
     
   </p>
-</footer>
+</section>
+
+<section id="writing">
+  <span class="h1"><a href="/archives">Writing</a></span>
+  <ul class="post-list">
     
+      
+    
+    
+      <li class="post-item">
+        
+    <div class="meta">
+        <time datetime="2017-06-22T13:48:04.000Z" itemprop="datePublished">2017-06-22</time>
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2017/06/22/u3d的spritepacker和assetbundle/">u3d的spritepacker和assetbundle</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+        <time datetime="2017-06-21T15:32:53.000Z" itemprop="datePublished">2017-06-21</time>
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2017/06/21/First-Hexo-Blog/">First Hexo Blog</a>
+    
+
+
+</span>
+      </li>
+    
+      <li class="post-item">
+        
+    <div class="meta">
+        <time datetime="2017-06-21T15:18:44.708Z" itemprop="datePublished">2017-06-21</time>
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2017/06/21/hello-world/">Hello World</a>
+    
+
+
+</span>
+      </li>
+    
+  </ul>
+  
+</section>
+
+
+
+    </div>
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 Lance
   </div>
-</div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="https://github.com/TomasCheng">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
