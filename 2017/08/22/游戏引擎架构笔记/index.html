@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://blog.chengliangsite.cn/2017/08/22/游戏引擎架构笔记/index.html">
 <meta property="og:site_name" content="Lance Notes">
 <meta property="og:description" content="游戏引擎架构主要是记录阅读过程中的思考和备忘    引擎各子系统的启动顺序，和销毁顺序问题如果全都做成 全局变量，我们无法控制全局变量的构造函数和析构函数的执行顺序。比较好的方法是，自定义单例类，然后自定义start、stop方法去启动和销毁子系统。注意 很多时候系统都是持有子系统的指针,而不是实例，这样比较节约内存，提高效率。不需要值复制的地方都用指针，内存中持有一份数据就可以了，通过指针操作这">
-<meta property="og:updated_time" content="2017-08-22T12:44:12.993Z">
+<meta property="og:updated_time" content="2017-08-22T12:47:15.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="游戏引擎架构笔记">
 <meta name="twitter:description" content="游戏引擎架构主要是记录阅读过程中的思考和备忘    引擎各子系统的启动顺序，和销毁顺序问题如果全都做成 全局变量，我们无法控制全局变量的构造函数和析构函数的执行顺序。比较好的方法是，自定义单例类，然后自定义start、stop方法去启动和销毁子系统。注意 很多时候系统都是持有子系统的指针,而不是实例，这样比较节约内存，提高效率。不需要值复制的地方都用指针，内存中持有一份数据就可以了，通过指针操作这">
@@ -263,7 +263,6 @@
 </li>
 <li>分离轴定理：若能找到一个轴，两个凸形状于该轴上的投影不重叠，就能确定两个形状不相交。</li>
 <li>判断AABB与AABB的相交，先找到他们在三个轴上的最小最大坐标，当在三个轴上的区间都相交时，两个AABB是相交的，否则不相交。</li>
-<li></li>
 </ul>
 
   </div>
