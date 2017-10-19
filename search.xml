@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ACM刷题-1]]></title>
+    <url>%2F2017%2F10%2F20%2FACM%E5%88%B7%E9%A2%98-1%2F</url>
+    <content type="text"><![CDATA[题目： 有n 根棍子，棍子i 的长度为ai。想要从中选出3 根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。 代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243#include "stdafx.h"#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;#include &lt;functional&gt;using namespace std;int n;vector&lt;int&gt; a;bool check(int &amp;a, int &amp;b, int &amp;c)&#123; if (a + b &gt; c&amp;&amp;a + c &gt; b&amp;&amp;b + c &gt; a) &#123; return true; &#125; return false;&#125;void solve()&#123; sort(a.begin(), a.end(), greater&lt;int&gt;()); for (int i = 0; i &lt; n - 2; i++) &#123; if (check(a[i], a[i + 1], a[i + 2])) &#123; cout &lt;&lt; a[i] + a[i + 1] + a[i + 2]; return; &#125; &#125; cout &lt;&lt; 0; return;&#125;int main()&#123; cin &gt;&gt; n; int temp; for (int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; temp; a.push_back(temp); &#125; solve(); getchar(); return 0;&#125; 思路： 先将数据逆序排序，然后按照顺序测试临近的三个边长是否能构成三角形，若找到则输出周长，若没有找到，则输出0。 例如，我们测试0、1、2号位上的数据是否能构成三角形，若不能的话，013数据肯定也不能，因为3比2还小，那么，这时候我们要将最大的数据变小，测试123号数据。]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[简单的光线追踪器]]></title>
     <url>%2F2017%2F10%2F01%2F%E7%AE%80%E5%8D%95%E7%9A%84%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA%E5%99%A8%2F</url>
     <content type="text"><![CDATA[简单的光线追踪器 入了一下光线追踪的门，欢喜的hin。 光线追踪器]]></content>
