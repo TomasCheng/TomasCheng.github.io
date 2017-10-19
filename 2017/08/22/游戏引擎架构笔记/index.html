@@ -101,7 +101,7 @@
 <meta property="og:url" content="http://blog.chengliangsite.cn/2017/08/22/游戏引擎架构笔记/index.html">
 <meta property="og:site_name" content="Lance Notes">
 <meta property="og:description" content="游戏引擎架构 主要是记录阅读过程中的思考和备忘">
-<meta property="og:updated_time" content="2017-10-19T08:01:53.830Z">
+<meta property="og:updated_time" content="2017-10-19T09:22:55.228Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="游戏引擎架构笔记">
 <meta name="twitter:description" content="游戏引擎架构 主要是记录阅读过程中的思考和备忘">
@@ -113,7 +113,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -216,6 +216,16 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -351,12 +361,34 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-19T17:01:53+09:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-19T18:22:55+09:00">
                 2017-10-19
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/游戏相关/" itemprop="url" rel="index">
+                    <span itemprop="name">游戏相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -724,6 +756,8 @@ Alpha混合最常用于渲染半透明几何物体，其混合函数为：Cd_new
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -765,7 +799,7 @@ Alpha混合最常用于渲染半透明几何物体，其混合函数为：Cd_new
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -825,6 +859,13 @@ Alpha混合最常用于渲染半透明几何物体，其混合函数为：Cd_new
       <!--/noindex-->
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -886,11 +927,6 @@ Alpha混合最常用于渲染半透明几何物体，其混合函数为：Cd_new
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
   </div>
