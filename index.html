@@ -363,7 +363,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-20T00:23:15+09:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-20T00:37:53+09:00">
                 2017-10-20
               </time>
             
@@ -451,26 +451,19 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li>题目：</li>
 </ul>
 <blockquote>
 <p>有n 根棍子，棍子i 的长度为ai。想要从中选出3 根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。</p>
 </blockquote>
-<ul>
-<li>代码：</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b, <span class="keyword">int</span> &amp;c)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span> (a + b &gt; c&amp;&amp;a + c &gt; b&amp;&amp;b + c &gt; a)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	sort(a.begin(), a.end(), greater&lt;<span class="keyword">int</span>&gt;());</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">2</span>; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span> (check(a[i], a[i + <span class="number">1</span>], a[i + <span class="number">2</span>]))</div><div class="line">		&#123;</div><div class="line">			<span class="built_in">cout</span> &lt;&lt; a[i] + a[i + <span class="number">1</span>] + a[i + <span class="number">2</span>];</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="number">0</span>;</div><div class="line">	<span class="keyword">return</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; n;</div><div class="line">	<span class="keyword">int</span> temp;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; temp;</div><div class="line">		a.push_back(temp);</div><div class="line">	&#125;</div><div class="line">	solve();</div><div class="line">	getchar();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>思路：</li>
-</ul>
-<blockquote>
-<p>先将数据逆序排序，然后按照顺序测试临近的三个边长是否能构成三角形，若找到则输出周长，若没有找到，则输出0。</p>
-<p>例如，我们测试0、1、2号位上的数据是否能构成三角形，若不能的话，013数据肯定也不能，因为3比2还小，那么，这时候我们要将最大的数据变小，测试123号数据。</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/20/ACM刷题-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
