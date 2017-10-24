@@ -316,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/10/20/ACM刷题-2/">
+    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/10/24/ACM/ACM刷题-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lance">
@@ -335,7 +335,210 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/20/ACM刷题-2/" itemprop="url">ACM刷题-2</a></h1>
+                <a class="post-title-link" href="/2017/10/24/ACM/ACM刷题-3/" itemprop="url">ACM刷题-3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T22:35:16+09:00">
+                2017-10-24
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-24T22:44:15+09:00">
+                2017-10-24
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  334
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>题目</li>
+</ul>
+<blockquote>
+<p>输入m个数，给定一个n,判断在m个数中，是否存在4个数相加起来的和为n,有的话输出yes,没有的话输出no,数字可以重复使用。</p>
+<p>输入m m个数 n</p>
+</blockquote>
+<ul>
+<li>代码</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> m, n;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></div><div class="line">&#123;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; m;</div><div class="line">	<span class="keyword">int</span> temp;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; temp;</div><div class="line">		a.push_back(temp);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; n;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++)</div><div class="line">		&#123;</div><div class="line">			temp = a[i] + a[j];</div><div class="line">			b.push_back(temp);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//对b进行排序</span></div><div class="line">	sort(b.begin(), b.end());</div><div class="line">	<span class="comment">//在b中找到2个数和为n</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m*m; i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span> (binary_search(b.begin() + i, b.end(), n - b[i]))<span class="comment">//二分查找</span></div><div class="line">		&#123;</div><div class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"yes"</span>;</div><div class="line">			<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"no"</span>;</div><div class="line">	getchar();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>思路</li>
+</ul>
+<blockquote>
+<p>本题首先最基本的是2个数和为n的情况，4个数的时候，我们先将4个数变成2个数相加的情况，即求出2个数的和的情况，构成一个新的数组b,然后在b里面找到2个数和为n即可。</p>
+<p>2个数的情况下，我们先将b排序，然后遍历每个数，在剩余的数组里面利用二分查找寻找m-b[i]即可。</p>
+<p>在构造b时，时间复杂度为n2，排序时复杂度为n2logn,二分查找时n2logn，所以最终的时间复杂度为n2logn。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/10/20/ACM/ACM刷题-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lance">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lance Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/20/ACM/ACM刷题-2/" itemprop="url">ACM刷题-2</a></h1>
         
 
         <div class="post-meta">
@@ -462,7 +665,7 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/20/ACM刷题-2/#more" rel="contents">
+            <a class="btn" href="/2017/10/20/ACM/ACM刷题-2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -513,7 +716,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/10/20/ACM刷题-1/">
+    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/10/20/ACM/ACM刷题-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lance">
@@ -532,7 +735,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/20/ACM刷题-1/" itemprop="url">ACM刷题-1</a></h1>
+                <a class="post-title-link" href="/2017/10/20/ACM/ACM刷题-1/" itemprop="url">ACM刷题-1</a></h1>
         
 
         <div class="post-meta">
@@ -656,7 +859,7 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/20/ACM刷题-1/#more" rel="contents">
+            <a class="btn" href="/2017/10/20/ACM/ACM刷题-1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -707,7 +910,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/10/01/简单的光线追踪器/">
+    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/10/01/图形渲染/简单的光线追踪器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lance">
@@ -726,7 +929,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/01/简单的光线追踪器/" itemprop="url">简单的光线追踪器</a></h1>
+                <a class="post-title-link" href="/2017/10/01/图形渲染/简单的光线追踪器/" itemprop="url">简单的光线追踪器</a></h1>
         
 
         <div class="post-meta">
@@ -846,7 +1049,7 @@
 <p>入了一下光线追踪的门，欢喜的hin。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/01/简单的光线追踪器/#more" rel="contents">
+            <a class="btn" href="/2017/10/01/图形渲染/简单的光线追踪器/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -897,7 +1100,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/08/25/好用的md编辑器/">
+    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/08/25/工具/好用的md编辑器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lance">
@@ -916,7 +1119,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/25/好用的md编辑器/" itemprop="url">好用的md编辑器</a></h1>
+                <a class="post-title-link" href="/2017/08/25/工具/好用的md编辑器/" itemprop="url">好用的md编辑器</a></h1>
         
 
         <div class="post-meta">
@@ -1036,7 +1239,7 @@
 <p>一直在寻找比较顺手的md编辑器，对于新手来说，预览是个必不可少的功能，但是很多编辑器在这方面做的都不是很好，今天在公司内网里找到了一款不错的，在公司机器上用了一下，整理了一些文档，正合我意，真是个意外的收获，就是我现在写这篇博客用的编辑器<code>Typora</code></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/25/好用的md编辑器/#more" rel="contents">
+            <a class="btn" href="/2017/08/25/工具/好用的md编辑器/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1087,7 +1290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/08/22/游戏引擎架构笔记/">
+    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/08/22/游戏/游戏引擎架构笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lance">
@@ -1106,7 +1309,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/22/游戏引擎架构笔记/" itemprop="url">游戏引擎架构笔记</a></h1>
+                <a class="post-title-link" href="/2017/08/22/游戏/游戏引擎架构笔记/" itemprop="url">游戏引擎架构笔记</a></h1>
         
 
         <div class="post-meta">
@@ -1226,7 +1429,7 @@
 <p>主要是记录阅读过程中的思考和备忘</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/22/游戏引擎架构笔记/#more" rel="contents">
+            <a class="btn" href="/2017/08/22/游戏/游戏引擎架构笔记/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1277,7 +1480,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/06/27/科学上网/">
+    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/06/27/工具/科学上网/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lance">
@@ -1296,7 +1499,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/27/科学上网/" itemprop="url">科学上网</a></h1>
+                <a class="post-title-link" href="/2017/06/27/工具/科学上网/" itemprop="url">科学上网</a></h1>
         
 
         <div class="post-meta">
@@ -1396,7 +1599,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/27/科学上网/#more" rel="contents">
+            <a class="btn" href="/2017/06/27/工具/科学上网/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1447,7 +1650,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/06/24/找实习/">
+    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/06/22/游戏/u3d的spritepacker和assetbundle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lance">
@@ -1466,175 +1669,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/24/找实习/" itemprop="url">找实习（1）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T11:57:43+09:00">
-                2017-06-24
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-19T17:02:05+09:00">
-                2017-10-19
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  987
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1>找实习的一些东西</h1>
-<p>最近一段时间一直在找暑假实习，感受很深的一点就是简历的制作很重要，我的简历制作经历了四个阶段吧，一次比一次好看，通过的概率也增加了不少，之前老是简历关都过不去，明年毕业的时候一定要好好注意这一点。网易的实习简历没过，阿里游戏的笔试没过，4399的简历没过，感觉自己之前两年都是混过去的，看的书太少了，搞得那些乱七八糟的东西，现在明白了，搞这一行还是要多看书，看视频教程是学不到高深的东西的，那些都是给外行人看的。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/24/找实习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/06/22/u3d的spritepacker和assetbundle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lance">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lance Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/22/u3d的spritepacker和assetbundle/" itemprop="url">u3d的spritepacker和assetbundle</a></h1>
+                <a class="post-title-link" href="/2017/06/22/游戏/u3d的spritepacker和assetbundle/" itemprop="url">u3d的spritepacker和assetbundle</a></h1>
         
 
         <div class="post-meta">
@@ -1754,7 +1789,7 @@
 这两样东西之前学u3d的时候没学到，正好学一下。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/22/u3d的spritepacker和assetbundle/#more" rel="contents">
+            <a class="btn" href="/2017/06/22/游戏/u3d的spritepacker和assetbundle/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1844,7 +1879,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1866,7 +1901,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

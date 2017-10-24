@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="笔记,游戏开发,引擎," />
 
 
 
@@ -94,15 +94,17 @@
 
 
 
-<meta name="description" content="我有一壶酒，足以慰风尘。尽倾江海里，赠饮天下人。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lance Notes">
-<meta property="og:url" content="http://blog.chengliangsite.cn/categories/工具/index.html">
+<meta name="description" content="游戏引擎架构 主要是记录阅读过程中的思考和备忘">
+<meta name="keywords" content="笔记,游戏开发,引擎">
+<meta property="og:type" content="article">
+<meta property="og:title" content="游戏引擎架构笔记">
+<meta property="og:url" content="http://blog.chengliangsite.cn/2017/08/22/游戏/游戏引擎架构笔记/index.html">
 <meta property="og:site_name" content="Lance Notes">
-<meta property="og:description" content="我有一壶酒，足以慰风尘。尽倾江海里，赠饮天下人。">
+<meta property="og:description" content="游戏引擎架构 主要是记录阅读过程中的思考和备忘">
+<meta property="og:updated_time" content="2017-10-19T09:22:55.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lance Notes">
-<meta name="twitter:description" content="我有一壶酒，足以慰风尘。尽倾江海里，赠饮天下人。">
+<meta name="twitter:title" content="游戏引擎架构笔记">
+<meta name="twitter:description" content="游戏引擎架构 主要是记录阅读过程中的思考和备忘">
 
 
 
@@ -131,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.chengliangsite.cn/categories/工具/"/>
+  <link rel="canonical" href="http://blog.chengliangsite.cn/2017/08/22/游戏/游戏引擎架构笔记/"/>
 
 
 
 
 
-  <title>分类: 工具 | Lance Notes</title>
+  <title>游戏引擎架构笔记 | Lance Notes</title>
   
 
 
@@ -162,7 +164,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -300,55 +302,432 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>工具<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.chengliangsite.cn/2017/08/22/游戏/游戏引擎架构笔记/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lance">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lance Notes">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/08/25/工具/好用的md编辑器/" itemprop="url">
-              
-                <span itemprop="name">好用的md编辑器</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">游戏引擎架构笔记</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-25T22:34:33+09:00"
-              content="2017-08-25" >
-          08-25
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-22T20:42:30+09:00">
+                2017-08-22
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-19T18:22:55+09:00">
+                2017-10-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/游戏相关/" itemprop="url" rel="index">
+                    <span itemprop="name">游戏相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3,464
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1>游戏引擎架构</h1>
+<p>主要是记录阅读过程中的思考和备忘</p>
+<a id="more"></a>  
+<ul>
+<li>引擎各子系统的启动顺序，和销毁顺序问题<br>
+如果全都做成 全局变量，我们无法控制全局变量的构造函数和析构函数的执行顺序。<br>
+比较好的方法是，自定义单例类，然后自定义start、stop方法去启动和销毁子系统。<br>
+注意 很多时候系统都是持有子系统的指针,而不是实例，这样比较节约内存，提高效率。不需要值复制的地方都用指针，内存中持有一份数据就可以了，通过指针操作这一块内存。</li>
+<li>内存管理问题<br>
+堆分配比较耗时，malloc/free会从用户模式切换到内核模式，我们自己定制分配器。<br>
+自定义的分配器就是先预先用malloc分配一大块内存，放在bss段，然后用的时候从里面拿，一直在用户模式下，比较节约时间。主要有 堆栈分配器、双端堆栈分配器、池分配器、单帧分配器（比如用堆栈分配器来管理一块内存用于每一帧的临时 变量存储，每一帧开始时都将堆栈指针指向底部，重新分配就好了，注意不要跨帧使用这些数据）、双缓冲分配器。<br>
+内存碎片整理，把原本不连续的以分配内存，通过复制移动变成连续的，需要注意分摊碎片整理的代价。</li>
+<li>字典可以用二叉查找树来实现，键值对储存在树的节点中，查找时用O(logn)二分查找，这要求键必须要是可比较的。</li>
+<li>字典还可以用散列表来实现，通过键的hash函数把键转化为整数，然后取模表的大小，存到表中，注意的就是可能会有碰撞出现，解决碰撞有两种方法，一种是开放式散列，碰撞的键值对挂在链表上，一种是闭合式散列（开放定址），利用探查算法(线性探查法、二次探查法，前后反复地找)找到空位，存入键值对。散列表的大小最好为质数，结合二次探查法，是个不错的实现。</li>
+<li>一般我们想要重新解释一段内存数据的意义，可以利用union，把源数据放进去，再用另外一种数据取出来。</li>
+</ul>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">u32 hashFloat(float f)</div><div class="line">&#123;</div><div class="line">    <span class="class"><span class="keyword">union</span></span></div><div class="line">    &#123;</div><div class="line">        float asFloat;</div><div class="line">        u32 asU32;</div><div class="line">    &#125;u;</div><div class="line">    u.asFloat = f;</div><div class="line">    <span class="keyword">return</span> u.asU32;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>游戏中的时间相关问题<br>
+游戏中的时间分为现实时间、游戏世界时间、局部时间。<br>
+在游戏主循环里面，我们需要利用时间来控制的各个子系统的刷新时机，另外在交换页面缓存的时候，还要注意垂直同步（即提交游戏画面数据到GPU的时机应该是显示器扫描线回到左上角的时候，要是错过了一次，就要等到下一次时机，这样可以避免画面撕裂）。还要注意时间间隔的问题。</li>
+<li>游戏引擎要做调试工具，可以在游戏中图形化显示所需信息。还可以做内存监控工具，检测游戏的内存分配情况，但是一般很难，因为我们很难避免不去引用其他人写的库，不过 很多设计精良的库都会提供内存分配钩子让我们用自己的分配器去替代它的预设分配器。</li>
+<li>渲染过程其实是这样的：
+<ol>
+<li>描述一个虚拟场景。这些场景其实就是各种三角面。</li>
+<li>定位以及定向一个虚拟摄像机，让这个摄像机为场景取景。这个摄像机前面有个屏幕，屏幕上有很多虚拟感光元件，这些原件就是对应显示设备上的像素。</li>
+<li>设置光源。光源产生的光线会与环境中的物体产生作用并反射，最终到达摄像机的虚拟感光像面上。</li>
+<li>描述场景中物体的视觉特性，决定了物体表面怎么与光线产生作用。</li>
+<li>对于每个位于影像矩形内的像素，引擎会找出经过该像素而聚焦于虚拟摄像机焦点的光线，并计算其颜色和强度。此过程称为求解渲染方程，也叫作着色方程。</li>
+</ol>
+</li>
+<li>光与物体的相互作用：
+<ol>
+<li>吸收</li>
+<li>折射</li>
+<li>传播、折射</li>
+<li>衍射</li>
+</ol>
+</li>
+<li>顶点属性：
+<ol>
+<li>位置矢量（模型空间）</li>
+<li>顶点法矢量（用于顶点光照计算）</li>
+<li>顶点切线矢量（tangent）。和 顶点副切线矢量、法矢量一起构成切线空间，用于计算多种逐像素光照</li>
+<li>漫反射颜色（diffuse color），四元素矢量</li>
+<li>镜面颜色（specular color）,当光线由光滑表面反射至虚拟摄像机影像表面，这个矢量就是描述其镜面高光颜色。</li>
+<li>纹理坐标(texture coordinates)，（u，v）描述某顶点在纹理二维正规化坐标空间中的位置。每个三角形可以有多张纹理贴图，所以一个顶点的纹理坐标可能不止一个。</li>
+<li>蒙皮权重（skinning weight），（k,w），在骨骼动画中，一个顶点受到关节k的影响权重为w，一个顶点可能受到多个关节的影响，最终顶点的位置是这些关节的影响的加权平均。</li>
+</ol>
+</li>
+<li>纹理的种类：
+<ol>
+<li>漫反射贴图（diffuse map）,又称 反照率贴图（albedo map）,该贴图的纹素储存了表面的漫反射颜色。</li>
+<li>法线贴图（normal map）,每个纹素储存以RGB值编码的法矢量。</li>
+<li>光泽贴图（gloss map），每个纹素储存了表面的光泽程度。</li>
+<li>环境贴图（environment map），含周围环境的图像，为了渲染反射效果。</li>
+</ol>
+</li>
+<li>纹理寻址模式。纹理坐标可以延伸至[0,1]之外，有以下几种方式可以处理：
+<ol>
+<li>缠绕模式（wrap mode），各方向上重复又重复，[ku,kv]相当于[u,v],k为整数。</li>
+<li>镜像模式（mirror mode），和wrap mode类似，只是在u为奇数倍数的纹理会在v轴方向形成镜像，而在v为奇数倍数的纹理会在u轴方向上形成镜像纹理。</li>
+<li>截取模式(clamp mode)，当纹理坐标超出范围后，纹理的边缘纹素简单延伸即可。</li>
+<li>边缘颜色模式（boder color mode），由用户指定一个颜色填充纹理坐标超出[0,1]范围的。</li>
+</ol>
+</li>
+<li>mipmap叫作 多级渐远纹理，就是对于一张贴图，我们可以建立较低分辨率位图序列，当中每张位图的宽度和高度都是前一张位图的一半，图形硬件会按照三角形与摄像机的距离选择合适的渐远纹理级数。</li>
+<li>纹理过滤算法：
+<ol>
+<li>最近邻，挑选距离像素中心最近的纹素；</li>
+<li>双线性，对周围四个纹素采样，加权平均；</li>
+<li>三线性，把双线性施加与最邻近的两个渐远纹理级数，然后把这两个采样结果线性插值；</li>
+<li>各向异性，上面几种方法对三角面正对于摄像机的情况比较理性，当面倾斜的话，需要根据视角对一个梯形范围内的纹理采样。</li>
+</ol>
+</li>
+<li>光照模型：
+<ol>
+<li>局部光照模型，只考虑光对于单个物体的局部影响，每个物体不会影响其他物体的光照。</li>
+<li>全局光照模型，光会被多个表面反射后才进入摄像机。可由单一数学公式描述，这个公式就叫作 渲染方程。</li>
+</ol>
+</li>
+<li>Phong氏光照模型
+<ol>
+<li>此模型把表面反射的光分解为三个独立项：
+<ol>
+<li>环境（ambient）项，模拟场景中的整体光照水平，其实就是对场景中间接反射光的粗略估计；</li>
+<li>漫反射(diffuse)项，模拟直接光源在表面均匀地向各个方向反射。</li>
+<li>镜面反射（specular）项，模拟在光滑表面会看到的光亮高光，出现在光源的直接反射方向。</li>
+</ol>
+</li>
+<li>Phong氏模型的计算：<br>
+输入有：<br>
+1。视线方向V=[Vx,Vy,Vz]，就是从反射点到摄像机的矢量<br>
+2。3个颜色通道的环境光强度A=[Ar,Ag,Ab]<br>
+3。表面那一点的法线矢量N=[Nx,Ny,Nz]<br>
+4。表面的反射属性<br>
+- 环境反射量Ka<br>
+- 漫反射量Kd<br>
+- 镜面反射量Ks<br>
+- 镜面的光滑度 幂a<br>
+5。每个光源的i的相关属性<br>
+- 光源的颜色及强度Ci=[Cri,Cgi,Cbi]<br>
+- 从反射点到光源的方向矢量Li<br>
+计算Phong模型中从表面某点的反射的光强度Ik可以表示为矢量方程：<br>
+I = Ka A + ∑（Kd( N Li) + Ks(Ri V)a）Ci<br>
+也就是这个光照强度是 环境光反射量乘以环境光的强度 加上 各个光源的效果累和，每个光源的效果是这么计算的：漫反射量乘以法线与光线的点积 再加上 镜面反射量乘以反射光线方向与视线方向的点积的a次幂，两者之和再乘以光源的强度即可。</li>
+</ol>
+</li>
+<li>怎么计算光线方向相对于表面法线的反射方向：<br>
+L = Lt + Ln<br>
+R = -Lt + Ln<br>
+R = -(L - Ln) + Ln<br>
+R = 2Ln - L<br>
+R = 2(N L)N - L 此公式可以计算所有光源方向Li的对应反射方向Ri</li>
+<li>在用透射投影渲染场景时，我们需要谨慎对待三角形顶点属性插值，需要把插值后的每顶点属性再除以对应的z坐标（深度）。</li>
+<li>想用画家算法来渲染三角形即先渲染后面的再渲染前面的三角形是不行，比如 当连个三角形穿插，或者 4个三角形以“#”形状层叠，这样画家算法就失效了。还是要用深度缓冲。</li>
+<li>在片段通过了所有的测试之后，其颜色就会与帧缓冲中原来的颜色混合，混合的方式是由 alpha混合函数 控制的。<br>
+Alpha混合最常用于渲染半透明几何物体，其混合函数为：Cd_new = AsCs + (1-As)Cd_old,即新的颜色是片段颜色和原有颜色的加权平均，片段的权重就是其alpha值。<br>
+要让alpha混合显示正常，需要先渲染场景中的不透明几何物体至帧缓冲，然后把半透明的物体从后往前渲染（同样也有画家算法类似的限制）。原因需要思考哦。</li>
+<li>渲染状态包括但不限于：
+<ol>
+<li>世界观察距矩阵</li>
+<li>光源方向矢量</li>
+<li>纹理绑定（即供某材质/着色器所用到的纹理）</li>
+<li>纹理寻址及过滤模式</li>
+<li>基于时间的纹理滚动及其他动画效果</li>
+<li>深度测试（启用或禁用）</li>
+<li>alpha混合选项</li>
+</ol>
+</li>
+<li>应用程序阶段完成的工作有：遍历可见的网格实例列表，遍历每个子网格材质对，以材质对规格设置渲染状态，调用底层的提交几何图元函数（DX:DrawIndexedPrimitive/OpenGL:glDrawArrays）或其他类似函数。CPU提交的时候其实是使用命令表同GPU沟通的,命令表包括 设置渲染状态和提交几何图元。</li>
+<li>场景图的数据结构有四叉树、八叉树、包围球树、BSP树、kd树、空间散列技术等。</li>
+<li>阴影渲染的两个技巧：阴影体积法，阴影贴图法。</li>
+<li>实现动画的几种方法：
+<ol>
+<li>精灵动画</li>
+<li>刚性层阶式动画</li>
+<li>逐顶点动画</li>
+<li>蒙皮动画</li>
+</ol>
+</li>
+<li>动画一般采用数据驱动的方式，并在最基本的骨骼关节等数据的基础上，添加动画管道，混合树，动画状态机（ASM），动画控制器（animation controller）来不停地对动画进行抽象封装，以便上层的调用。动画中的很多概念在unity3d中都有体现。</li>
+<li>游戏中的物理学主要是刚体动力学。</li>
+<li>碰撞检测系统，用 可碰撞体 来描述一个参与碰撞检测的单独刚体物体，包含两个基本信息，形状和变换。形状描述可碰撞体的几何外形，变换则描述形状在游戏中的位置及定向。</li>
+<li>碰撞系统通常用 碰撞世界 的数据结构来管理其所有的可碰撞体。碰撞世界是专门为碰撞检测而设的游戏世界的完整表达形式。<br>
+碰撞世界只需包含游戏世界中有可能碰撞的可碰撞体，不需要去遍历其他无关的数据结构。另外一方面 单独把碰撞世界封装起来，可以独立于其他模块，这样我们的碰撞系统还能应用在其他项目中，就像ODE那样。</li>
+<li>碰撞原型一般有几下几种：
+<ol>
+<li>球体。</li>
+<li>胶囊体</li>
+<li>轴对齐包围盒（AABB）</li>
+<li>定向包围盒（OBB）</li>
+<li>离散定向多胞形</li>
+<li>任意凸体积</li>
+<li>多边形汤</li>
+<li>复合形状</li>
+</ol>
+</li>
+<li>分离轴定理：若能找到一个轴，两个凸形状于该轴上的投影不重叠，就能确定两个形状不相交。</li>
+<li>判断AABB与AABB的相交，先找到他们在三个轴上的最小最大坐标，当在三个轴上的区间都相交时，两个AABB是相交的，否则不相交。</li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Lance WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Lance Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Lance
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.chengliangsite.cn/2017/08/22/游戏/游戏引擎架构笔记/" title="游戏引擎架构笔记">http://blog.chengliangsite.cn/2017/08/22/游戏/游戏引擎架构笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
+            <a href="/tags/游戏开发/" rel="tag"># 游戏开发</a>
+          
+            <a href="/tags/引擎/" rel="tag"># 引擎</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/27/工具/科学上网/" rel="next" title="科学上网">
+                <i class="fa fa-chevron-left"></i> 科学上网
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/25/工具/好用的md编辑器/" rel="prev" title="好用的md编辑器">
+                好用的md编辑器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -356,6 +735,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTQyOS83OTkz"></div>
+    
+  </div>
+
 
         </div>
         
@@ -378,8 +763,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -447,6 +841,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">游戏引擎架构</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -582,10 +992,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
@@ -614,6 +1024,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
