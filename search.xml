@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ACM刷题-6]]></title>
+    <url>%2F2017%2F10%2F25%2FACM%2FACM%E5%88%B7%E9%A2%98-6%2F</url>
+    <content type="text"><![CDATA[题目 有一个大小为N×M的园子，雨后积起了水。八连通的积水被认为是连接在一起的。请求出 园子里总共有多少水洼？（八连通指的是下图中相对W 的*的部分） 输入：N=10, M=12 园子如下图（'W'表示积水，'.'表示没有积水） W........WW. .WWW.....WWW ....WW...WW. .........WW. .........W.. ..W......W.. .W.W.....WW. W.W.W.....W. .W.W......W. ..W.......W. 输出：3 代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;iostream&gt;#include &lt;vector&gt;using namespace std;int n, m;vector&lt;vector&lt;char&gt;&gt; a;//判断i,j是否为'M'bool F(int i, int j) &#123; if (i &gt;= 0 &amp;&amp; i &lt; n&amp;&amp;j &gt;= 0 &amp;&amp; j &lt; m&amp;&amp;a[i][j] == 'W') &#123; return true; &#125; return false;&#125;//将i,j及其周围的M变为.void fun(int i, int j)&#123; //右下四个方向上判断即可 a[i][j] = '.'; if (F(i, j + 1)) &#123; fun(i, j + 1); &#125; if (F(i + 1, j - 1)) &#123; fun(i + 1, j - 1); &#125; if (F(i + 1, j)) &#123; fun(i + 1, j); &#125; if (F(i + 1, j + 1)) &#123; fun(i + 1, j + 1); &#125;&#125;int main(int argc, char* argv[])&#123; cin &gt;&gt; n &gt;&gt; m; char temp; for (int i = 0; i &lt; n; i++) &#123; vector&lt;char&gt; p; for (int j = 0; j &lt; m; j++) &#123; cin &gt;&gt; temp; p.push_back(temp); &#125; a.push_back(p); &#125; int sum = 0; for (int i = 0; i &lt; n; i++) &#123; for (int j = 0; j &lt; m; j++) &#123; if (a[i][j] == 'W') &#123; fun(i, j); sum++; &#125; &#125; &#125; cout &lt;&lt; sum; getchar(); return 0;&#125; 思路 遍历这个二维数组，当碰到W时，根据bfs将其周围的W都变成.，最后统计这样的操作总共进行了几次即可。 中间出了个小问题，浪费了不少时间，把第20行的a[i][j] = '.';写成了a[i][j] == '.';，一直没法AC，这种错误要么不犯，烦了就很难意识到，值得注意。]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ACM刷题-5]]></title>
     <url>%2F2017%2F10%2F25%2FACM%2FACM%E5%88%B7%E9%A2%98-5%2F</url>
     <content type="text"><![CDATA[题目 部分和问题：给定整数a1、a2、…、an，判断是否可以从中选出若干数，使它们的和恰好为k。 输入n n个数 k 代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344#include &lt;iostream&gt;#include &lt;vector&gt;using namespace std;int n, k;vector&lt;int&gt; a;//利用深度优先搜索来解决问题//已经得到前i项的和，对i之后的数据进行分支bool bfs(int i, int sum)&#123; if (i == n) &#123; return sum == k; &#125; if (bfs(i + 1, sum)) &#123; return true; &#125; if (bfs(i + 1, sum + a[i])) &#123; return true; &#125; return false;&#125;int main(int argc, char* argv[])&#123; cin &gt;&gt; n; int temp; for (int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; temp; a.push_back(temp); &#125; cin &gt;&gt; k; if (bfs(0, 0)) &#123; cout &lt;&lt; "yes"; &#125; else &#123; cout &lt;&lt; "no"; &#125; getchar(); return 0;&#125; 思路 利用深度搜索思想在这个问题的解空间中寻找符合条件的解，其中的状态转换是关键。实际上就是在加上某个数得到sum值后，对后面的数据进行分支，分为加上后面那个数不加上后面那个数，最后当所有的数都遍历了一边后，判断sum值是否是n。其实这个解空间就是一个二叉树，而我们做的就是在这个二叉树上找到sum值为n的树叶节点。]]></content>
