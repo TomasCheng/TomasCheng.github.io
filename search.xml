@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ACM刷题-5]]></title>
+    <url>%2F2017%2F10%2F25%2FACM%2FACM%E5%88%B7%E9%A2%98-5%2F</url>
+    <content type="text"><![CDATA[题目 部分和问题：给定整数a1、a2、…、an，判断是否可以从中选出若干数，使它们的和恰好为k。 输入n n个数 k 代码 1234567891011121314151617181920212223242526272829303132333435363738394041424344#include &lt;iostream&gt;#include &lt;vector&gt;using namespace std;int n, k;vector&lt;int&gt; a;//利用深度优先搜索来解决问题//已经得到前i项的和，对i之后的数据进行分支bool bfs(int i, int sum)&#123; if (i == n) &#123; return sum == k; &#125; if (bfs(i + 1, sum)) &#123; return true; &#125; if (bfs(i + 1, sum + a[i])) &#123; return true; &#125; return false;&#125;int main(int argc, char* argv[])&#123; cin &gt;&gt; n; int temp; for (int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; temp; a.push_back(temp); &#125; cin &gt;&gt; k; if (bfs(0, 0)) &#123; cout &lt;&lt; "yes"; &#125; else &#123; cout &lt;&lt; "no"; &#125; getchar(); return 0;&#125; 思路 利用深度搜索思想在这个问题的解空间中寻找符合条件的解，其中的状态转换是关键。实际上就是在加上某个数得到sum值后，对后面的数据进行分支，分为加上后面那个数不加上后面那个数，最后当所有的数都遍历了一边后，判断sum值是否是n。其实这个解空间就是一个二叉树，而我们做的就是在这个二叉树上找到sum值为n的树叶节点。]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ACM刷题-4]]></title>
+    <url>%2F2017%2F10%2F24%2FACM%2FACM%E5%88%B7%E9%A2%98-4%2F</url>
+    <content type="text"><![CDATA[题目 若我们用递归的方法求斐波那契数列的第n项，当n较大的时候，程序的时间复杂度会急剧增加，有较大的优化空间，给出一种优化方案。 代码 1234567891011121314151617181920212223242526#include &lt;iostream&gt;#include &lt;vector&gt;using namespace std;int n;vector&lt;int&gt; a;int F(int n)&#123; if (n &lt;= 1) &#123; return n; &#125; if (n &lt;= a.size()) &#123; return a[n - 1]; &#125; a.push_back(F(n - 2) + F(n - 1)); return a[n - 1];&#125;int main(int argc, char* argv[])&#123; a.push_back(1); cin &gt;&gt; n; cout &lt;&lt; F(n); getchar(); return 0;&#125; 思路 首先我们要知道，递归之所以会耗时，是因为我们在计算的过程中进行了大量的重复计算，我们并没有将之前计算过的数值保留起来，所以，优化的时候我们可以考虑记忆化搜索的方式，将之前计算过的n储存起来，当再次要获取这个值的时候，就不要再计算了，而是直接从a中取得，大大提高了计算的效率。]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ACM刷题-3]]></title>
     <url>%2F2017%2F10%2F24%2FACM%2FACM%E5%88%B7%E9%A2%98-3%2F</url>
     <content type="text"><![CDATA[题目 输入m个数，给定一个n,判断在m个数中，是否存在4个数相加起来的和为n,有的话输出yes,没有的话输出no,数字可以重复使用。 输入m m个数 n 代码 12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;using namespace std;int m, n;vector&lt;int&gt; a;vector&lt;int&gt; b;int main(int argc, char* argv[])&#123; cin &gt;&gt; m; int temp; for (int i = 0; i &lt; m; i++) &#123; cin &gt;&gt; temp; a.push_back(temp); &#125; cin &gt;&gt; n; for (int i = 0; i &lt; m; i++) &#123; for (int j = 0; j &lt; m; j++) &#123; temp = a[i] + a[j]; b.push_back(temp); &#125; &#125; //对b进行排序 sort(b.begin(), b.end()); //在b中找到2个数和为n for (int i = 0; i &lt; m*m; i++) &#123; if (binary_search(b.begin() + i, b.end(), n - b[i]))//二分查找 &#123; cout &lt;&lt; "yes"; return 0; &#125; &#125; cout &lt;&lt; "no"; getchar(); return 0;&#125; 思路 本题首先最基本的是2个数和为n的情况，4个数的时候，我们先将4个数变成2个数相加的情况，即求出2个数的和的情况，构成一个新的数组b,然后在b里面找到2个数和为n即可。 2个数的情况下，我们先将b排序，然后遍历每个数，在剩余的数组里面利用二分查找寻找m-b[i]即可。 在构造b时，时间复杂度为n2，排序时复杂度为n2logn,二分查找时n2logn，所以最终的时间复杂度为n2logn。]]></content>
@@ -27,7 +51,7 @@
   <entry>
     <title><![CDATA[ACM刷题-1]]></title>
     <url>%2F2017%2F10%2F20%2FACM%2FACM%E5%88%B7%E9%A2%98-1%2F</url>
-    <content type="text"><![CDATA[题目： 有n 根棍子，棍子i 的长度为ai。想要从中选出3 根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。 代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243#include "stdafx.h"#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;#include &lt;functional&gt;using namespace std;int n;vector&lt;int&gt; a;bool check(int &amp;a, int &amp;b, int &amp;c)&#123; if (a + b &gt; c&amp;&amp;a + c &gt; b&amp;&amp;b + c &gt; a) &#123; return true; &#125; return false;&#125;void solve()&#123; sort(a.begin(), a.end(), greater&lt;int&gt;()); for (int i = 0; i &lt; n - 2; i++) &#123; if (check(a[i], a[i + 1], a[i + 2])) &#123; cout &lt;&lt; a[i] + a[i + 1] + a[i + 2]; return; &#125; &#125; cout &lt;&lt; 0; return;&#125;int main()&#123; cin &gt;&gt; n; int temp; for (int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; temp; a.push_back(temp); &#125; solve(); getchar(); return 0;&#125; 思路： 先将数据逆序排序，然后按照顺序测试临近的三个边长是否能构成三角形，若找到则输出周长，若没有找到，则输出0。 例如，我们测试012号位上的数据是否能构成三角形，若不能的话，013数据肯定也不能，因为3比2还小，那么，这时候我们要将最大的数据变小，测试123号数据。]]></content>
+    <content type="text"><![CDATA[题目 有n 根棍子，棍子i 的长度为ai。想要从中选出3 根棍子组成周长尽可能长的三角形。请输出最大的周长，若无法组成三角形则输出0。 代码 12345678910111213141516171819202122232425262728293031323334353637383940414243#include "stdafx.h"#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;#include &lt;functional&gt;using namespace std;int n;vector&lt;int&gt; a;bool check(int &amp;a, int &amp;b, int &amp;c)&#123; if (a + b &gt; c&amp;&amp;a + c &gt; b&amp;&amp;b + c &gt; a) &#123; return true; &#125; return false;&#125;void solve()&#123; sort(a.begin(), a.end(), greater&lt;int&gt;()); for (int i = 0; i &lt; n - 2; i++) &#123; if (check(a[i], a[i + 1], a[i + 2])) &#123; cout &lt;&lt; a[i] + a[i + 1] + a[i + 2]; return; &#125; &#125; cout &lt;&lt; 0; return;&#125;int main()&#123; cin &gt;&gt; n; int temp; for (int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; temp; a.push_back(temp); &#125; solve(); getchar(); return 0;&#125; 思路 先将数据逆序排序，然后按照顺序测试临近的三个边长是否能构成三角形，若找到则输出周长，若没有找到，则输出0。 例如，我们测试012号位上的数据是否能构成三角形，若不能的话，013数据肯定也不能，因为3比2还小，那么，这时候我们要将最大的数据变小，测试123号数据。]]></content>
       <categories>
         <category>ACM</category>
       </categories>
