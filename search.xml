@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ACM刷题-9]]></title>
+    <url>%2F2017%2F10%2F26%2FACM%2FACM%E5%88%B7%E9%A2%98-9%2F</url>
+    <content type="text"><![CDATA[题目 有两个向量v1=(x1, x2, ..., xn)和v2=(y1, y2, …, yn)，允许任意交换v1 和v2 各自的分量的顺序。请 计算v1 和v2 的内积x1y1+…+xnyn 的最小值。 代码 12345678910111213141516171819202122232425262728293031323334//向量内积最小#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;#include &lt;functional&gt;using namespace std;int n;vector&lt;int&gt; v1;vector&lt;int&gt; v2;int main(int argc, char* argv[])&#123; cin &gt;&gt; n; int temp; for (int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; temp; v1.push_back(temp); &#125; for (int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; temp; v2.push_back(temp); &#125; sort(v1.begin(), v1.end()); sort(v2.begin(), v2.end(), greater&lt;int&gt;()); long long res = 0; for (int i = 0; i &lt; n; i++) &#123; res += (long long)v1[i] * v2[i]; &#125; cout &lt;&lt; res; getchar(); return 0;&#125; 思路 思路比较简单，当一个向量各分量顺序排，另外一个向量各分量逆序排时，两向量内积最小。 证明：先考虑n=2的情况，设v1=(x1,x2) v2=(y1,y2)，假定x1&lt;x2，y1&lt;y2，则有x1y1+x2y2 - (x1y2+x2y1)=x1y1+x2y2-x1y2-x2y1=x1(y1-y2)-x2(y1-y2)=(x1-x2)(y1-y2)&gt;0，即当两个都是顺序时的内积大于一个顺序一个逆序的内积，符合我们上面的判断；当n&gt;2时，假定v1是升序，则若v2不是降序的话，必然存在i&lt;j,v2[i]&lt;v2[j]，根据n=2时的情况，当我们把v2[i] v2[j]交换位置后，可以使得内积更小，所以v2必然要是降序的。证明完毕。]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ACM刷题-8]]></title>
+    <url>%2F2017%2F10%2F26%2FACM%2FACM%E5%88%B7%E9%A2%98-8%2F</url>
+    <content type="text"><![CDATA[题目 输入一个n，输出0—n-1这些数字构成的全排列。 代码 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263//生成0——n-1的全排列#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;#include &lt;functional&gt;using namespace std;int n;vector&lt;int&gt; a;vector&lt;int&gt; b;vector&lt;bool&gt; used;//标识一个数字是否已经用过了//确定pos位上的数字应该是多少void mypermutation(int pos, int n, function&lt;void()&gt; f)&#123; if (pos == n) &#123; f(); return; &#125; for (int i = 0; i &lt; n; i++) &#123; if (used[i] == false) &#123; b[pos] = i; used[i] = true; mypermutation(pos + 1, n, f); used[i] = false; &#125; &#125; return;&#125;int main(int argc, char* argv[])&#123; cin &gt;&gt; n; for (int i = 0; i &lt; n; i++) &#123; a.push_back(i); b.push_back(i); used.push_back(false); &#125; //stl算法的使用 cout &lt;&lt; "stl:" &lt;&lt; endl; int count = 0; do &#123; ++count; cout &lt;&lt; count &lt;&lt; ": "; for_each(a.begin(), a.end(), [](int x) &#123;cout &lt;&lt; x &lt;&lt; " "; &#125;); cout &lt;&lt; endl; &#125; while (next_permutation(a.begin(), a.end())); count = 0; //自己算法实现 cout &lt;&lt; endl &lt;&lt; "self_implement:" &lt;&lt; endl; mypermutation(0, n, [&amp;]() &#123; ++count; cout &lt;&lt; count &lt;&lt; ": "; for_each(b.begin(), b.end(), [](int x) &#123;cout &lt;&lt; x &lt;&lt; " "; &#125;); cout &lt;&lt; endl; &#125;); getchar(); return 0;&#125; 思路 对于这个全排列问题，STL中有个现成的算法可以用，叫做next_permutation()，这题我们先是用了STL提高的算法，再自己实现了一下全排列算法。全排列算法通过递归的方式进行，我们是按个确定每一位上的数字的，当某一位数字用过了，就标识下，当全部位上的数字都确定下来了，就找到一个全排列了，然后将之前那个数字标志为没用过，看一下后面有没有没用过的数字，有的话就用，没有的话就接着回滚到上一次，将那个数字标志为未用过，再找后面的未用过的数字填到这一位上，最终算法可以将所有的全排列找到。]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ACM刷题-7]]></title>
     <url>%2F2017%2F10%2F25%2FACM%2FACM%E5%88%B7%E9%A2%98-7%2F</url>
     <content type="text"><![CDATA[题目 给定一个大小为N×M的迷宫。迷宫由通道和墙壁组成，每一步可以向邻接的上下左右四格 的通道移动。请求出从起点到终点所需的最小步数。请注意，本题假定从起点一定可以移动 到终点。 输入：N=10, M=10（迷宫如下图所示。'#'，'.'，'S'，'G'分别表示墙壁、通道、起点和终点） S######.......#..#.#.##.##.#.#.........##.....#....#.#######.#....#......####.###.....#...G# 输出：22 代码 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;#include &lt;queue&gt;using namespace std;typedef pair&lt;int, int&gt; P;int n, m;P s;//起点位置P g;//终点位置vector&lt;vector&lt;char&gt;&gt; map;//地图vector&lt;vector&lt;int&gt;&gt; d;//表示最短距离，并标识该位置是否访问过,初始值为-1//用两个数组储存我们要遍历的四个方向int dx[4] = &#123; 0,1,0,-1 &#125;;int dy[4] = &#123; -1,0,1,0 &#125;;int bfs()&#123; queue&lt;P&gt; q; q.push(s);//把起点放入队列 d[s.first][s.second] = 0;//将起点的距离值设为0 while (q.size() &gt; 0) &#123; P p = q.front(); q.pop(); if (p == g) &#123; break; &#125; //往四个方向上遍历 for (int i = 0; i &lt; 4; i++) &#123; P t = P(p.first + dx[i], p.second + dy[i]);//得到这个点 if (t.first &gt; 0 &amp;&amp; t.first &lt; n &amp;&amp; t.second&gt;0 &amp;&amp; t.second &lt; m &amp;&amp; map[t.first][t.second] != '#' &amp;&amp; d[t.first][t.second] == -1)//可以走且没有访问过 &#123; q.push(t); d[t.first][t.second] = d[p.first][p.second] + 1; &#125; &#125; &#125; return d[g.first][g.second];&#125;int main(int argc, char* argv[])&#123; cin &gt;&gt; n &gt;&gt; m; char temp; for (int i = 0; i &lt; n; i++) &#123; vector&lt;char&gt; t; vector&lt;int&gt; t2; for (int j = 0; j &lt; m; j++) &#123; cin &gt;&gt; temp; t.push_back(temp); if (temp == 'S') &#123; s.first = i; s.second = j; &#125; else if (temp == 'G') &#123; g.first = i; g.second = j; &#125; t2.push_back(-1); &#125; map.push_back(t); d.push_back(t2); &#125; cout &lt;&lt; bfs(); getchar(); return 0;&#125; 思路 这道走迷宫的题目是广度优先搜索的经典案例，bfs按照距离开始状态由远及近的顺序进行搜索，可以很容易的用来求最短路径，最少操作之类的问题。在这个问题中，状态仅仅是目前所在位置的坐标，用一个pair即可表达，当状态更加复杂的时候就需要封装成一个类来表示了。状态转移的方式是四方向移动，状态数与迷宫的大小是相等的，复杂度是O(4*N*M)=O(N*M)。 在搜索过程中我们需要通过某种方式来标记该状态是否已经访问过，在本题中我们利用d数组一方面作为距离的记录，一方面用-1来标记是否访问过。在本题的代码中，到达终点以后就会停止搜索，其实也可以继续搜索下去，这样就计算出了所有位置到达开始位置的最短距离，并且我们还可以通过判断最后终点位置的d是否为-1了知道是否有路径到达终点位置。]]></content>
