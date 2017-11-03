@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ACM刷题-11]]></title>
+    <url>%2F2017%2F10%2F26%2FACM%2FACM%E5%88%B7%E9%A2%98-11%2F</url>
+    <content type="text"><![CDATA[题目 有n项工作，每项工作分别在si时间开始，在ti时间结束。对于每项工作，你都可以选择参加与否。如果选择了参加，那么自始至终都必须全程参与。此外，参加工作的时间段不能重叠（即使是开始的瞬间和结束的瞬间的重叠也是不允许的）。你的目标是参与尽可能多的工作，那么最多能参与多少项工作呢？ 代码 12 思路]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ACM刷题-10]]></title>
+    <url>%2F2017%2F10%2F26%2FACM%2FACM%E5%88%B7%E9%A2%98-10%2F</url>
+    <content type="text"><![CDATA[题目 有1元、5元、10元、50元、100元、500元各C1 C5 C10 C50 C100 C500枚。现在要用这些硬币来支护A元，最少需要多少枚硬币？假定本题至少存在一种支付方案。 代码 12345678910111213141516171819202122232425//贪心算法#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;const int V[6] = &#123; 1,5,10,50,100,500 &#125;;//硬币的面值int C[6];//硬币的个数int A;int main(int argc, char* argv[])&#123; for (int i = 0; i &lt; 6; i++) &#123; cin &gt;&gt; C[i]; &#125; cin &gt;&gt; A; int res = 0; for (int i = 5; i &gt;= 0; i--) &#123; int t = min(A / V[i], C[i]);//个数 A -= t*V[i]; res += t; &#125; cout &lt;&lt; res; getchar(); return 0;&#125; 思路 思路比较容易，既然要求最少的方案，那么我们从最大币值的硬币开始拿，大的币值超过了，再用小币值的硬币，这样就一定是最少的方案。代码实现的时候，第18行考虑了全部用某个币值的硬币和硬币个数限制两种情况，得到该币值我们应该拿的个数。 这是贪心算法思想的一个最简单的应用，遵循某种规划，不断贪心选取当前最优策略。而搜索算法和动态规划算法则是在多种策略中选取最优解。]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ACM刷题-9]]></title>
     <url>%2F2017%2F10%2F26%2FACM%2FACM%E5%88%B7%E9%A2%98-9%2F</url>
     <content type="text"><![CDATA[题目 有两个向量v1=(x1, x2, ..., xn)和v2=(y1, y2, …, yn)，允许任意交换v1 和v2 各自的分量的顺序。请 计算v1 和v2 的内积x1y1+…+xnyn 的最小值。 代码 12345678910111213141516171819202122232425262728293031323334//向量内积最小#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;#include &lt;functional&gt;using namespace std;int n;vector&lt;int&gt; v1;vector&lt;int&gt; v2;int main(int argc, char* argv[])&#123; cin &gt;&gt; n; int temp; for (int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; temp; v1.push_back(temp); &#125; for (int i = 0; i &lt; n; i++) &#123; cin &gt;&gt; temp; v2.push_back(temp); &#125; sort(v1.begin(), v1.end()); sort(v2.begin(), v2.end(), greater&lt;int&gt;()); long long res = 0; for (int i = 0; i &lt; n; i++) &#123; res += (long long)v1[i] * v2[i]; &#125; cout &lt;&lt; res; getchar(); return 0;&#125; 思路 思路比较简单，当一个向量各分量顺序排，另外一个向量各分量逆序排时，两向量内积最小。 证明：先考虑n=2的情况，设v1=(x1,x2) v2=(y1,y2)，假定x1&lt;x2，y1&lt;y2，则有x1y1+x2y2 - (x1y2+x2y1)=x1y1+x2y2-x1y2-x2y1=x1(y1-y2)-x2(y1-y2)=(x1-x2)(y1-y2)&gt;0，即当两个都是顺序时的内积大于一个顺序一个逆序的内积，符合我们上面的判断；当n&gt;2时，假定v1是升序，则若v2不是降序的话，必然存在i&lt;j,v2[i]&lt;v2[j]，根据n=2时的情况，当我们把v2[i] v2[j]交换位置后，可以使得内积更小，所以v2必然要是降序的。证明完毕。]]></content>
